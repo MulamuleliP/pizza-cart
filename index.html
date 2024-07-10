@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfect Pizza</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.8.2/alpine.js"></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
+    
+</head>
+
+<body>
+    <h1>Perfect Pizza</h1>
+
+    <div x-data="pizzaCart()" class="shopping-cart">
+        <h2>Shopping Cart</h2>
+        <div>
+            <div>
+                <h3>Small</h3>
+                <button @click="add('small')">+</button>
+                <button @click="remove('small')">-</button>
+                <span x-text="prices.small"></span>
+            </div>
+            <div>
+                <h3>Medium</h3>
+                <button @click="add('medium')">+</button>
+                <button @click="remove('medium')">-</button>
+                <span x-text="prices.medium"></span>
+            </div>
+            <div>
+                <h3>Large</h3>
+                <button @click="add('large')">+</button>
+                <button @click="remove('large')">-</button>
+                <span x-text="prices.large"></span>
+            </div>
+        </div>
+        <h3>Total: <span x-text="totalCost"></span></h3>
+        <div>
+            <label>Payment amount:</label>
+            <input type="number" x-model="payment" />
+            <button class="pay" @click="pay()">Pay</button>
+        </div>
+        <p x-text="message"></p>
+    </div>
+
+    <div class="pizzas">
+        <div class="pizza small_pizza">
+            <h2>Small Pizza</h2>
+            <img src="Pictures\pizza.png"
+                width="100">
+            <h3>R49.00</h3>
+            <div>
+                Small pizza with 1 meat topping and 2 vegetable toppings.
+            </div>
+        </div>
+
+        <div class="pizza medium_pizza">
+            <h2>Medium Pizza</h2>
+            <img src="Pictures\pizza.png"
+                width="130">
+            <h3>R89.00</h3>
+            <div>
+                Medium pizza with 2 meat toppings and 3 vegetable toppings.
+            </div>
+        </div>
+
+        <div class="pizza large_pizza">
+            <h2>Large Pizza</h2>
+            <img src="Pictures\pizza.png"
+                width="155">
+            <h3>R129.00</h3>
+            <div>
+                Large pizza with 3 meat toppings and 4 vegetable toppings.
+            </div>
+        </div>
+    </div>
+
+    <div class="pizza contact_us">
+        <h2>Contact details</h2>
+        Contact us at: (021)-541-1000 info@perfectpizza.co.za
+    </div>
+
+    
+    <script src="index.js"></script>
+
+   
+</body>
+
+</html>
