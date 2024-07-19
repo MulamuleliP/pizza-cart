@@ -16,7 +16,7 @@ function pizzaCart() {
             }
         },
         get totalCost() {
-            return (this.prices.small + this.prices.medium + this.prices.large).toFixed(2);
+            return (this.prices.small + this.prices.medium + this.prices.large);
         },
         pay() {
             const total = parseFloat(this.totalCost);
@@ -29,5 +29,7 @@ function pizzaCart() {
                 this.message = 'Sorry - that is not enough money!';
             }
         }
+        
     };
+
 }
