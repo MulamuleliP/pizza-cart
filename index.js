@@ -6,6 +6,7 @@ function pizzaCart() {
             large: 0,
         },
         payment: 0,
+        change: 0,
         message: '',
         add(size) {
             this.prices[size] += size === 'small' ? 49.00 : size === 'medium' ? 89.00 : 129.00;
@@ -25,8 +26,10 @@ function pizzaCart() {
                 this.message = '"Enjoy" your pizza';
                 this.prices.small = this.prices.medium = this.prices.large = 0;
                 this.payment = 0;
+                this.change = (payment  - total);
             } else {
                 this.message = 'Sorry - that is not enough money!';
+                this.change = 0;
             }
         }
         
